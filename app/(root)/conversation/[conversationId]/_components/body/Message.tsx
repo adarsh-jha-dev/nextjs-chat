@@ -60,8 +60,8 @@ const Message = ({
           >
             {formatTime(createdAt)}
           </p>
+          {seen}
         </div>
-        {seen}
       </div>
       <Avatar
         className={cn("relative h-8 w-8", {

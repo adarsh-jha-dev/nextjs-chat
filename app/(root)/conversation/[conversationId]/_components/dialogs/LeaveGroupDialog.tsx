@@ -44,8 +44,8 @@ const LeaveGroupDialog = ({ conversationId, open, setOpen }: Props) => {
         <AlertDialogHeader>
           <AlertDialogTitle>Are You Sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. You'll not be able to see/send any
-            messages from this group.
+            This action cannot be undone. You&apos;ll not be able to see/send
+            any messages from this group.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

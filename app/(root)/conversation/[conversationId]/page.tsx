@@ -18,7 +18,7 @@ type Props = {
   };
 };
 
-const page = ({ params: { conversationId } }: Props) => {
+const SpecificConversationPage = ({ params: { conversationId } }: Props) => {
   const conversation = useQuery(api.conversation.get, { id: conversationId });
   const [removeFriendDialogOpen, setRemoveFriendDialogOpen] = useState(false);
   const [deleteGroupDialogOpen, setDeleteGroupDialogOpen] = useState(false);
@@ -26,7 +26,7 @@ const page = ({ params: { conversationId } }: Props) => {
   const [callType, setCallType] = useState<"audio" | "video" | null>(null);
   return conversation === undefined ? (
     <div className="w-full h-full items-center justify-center">
-      <Loader2 className="h-8 w-8" />
+      <Loader2 className="h-8 w-8 animate-spin" />
     </div>
   ) : conversation === null ? (
     <p className="w-full h-full items-center justify-center">
@@ -99,4 +99,4 @@ const page = ({ params: { conversationId } }: Props) => {
   );
 };
 
-export default page;
+export default SpecificConversationPage;

@@ -70,7 +70,7 @@ const CreateGroupDialog = () => {
     return friends
       ? friends.filter((friend) => !members.includes(friend._id))
       : [];
-  }, [members.length, friends?.length]);
+  }, [members, friends]);
 
   const handleSubmit = async (
     values: z.infer<typeof createGroupFormSchema>
@@ -78,6 +78,7 @@ const CreateGroupDialog = () => {
     await createGroup({ name: values.name, members: values.members })
       .then(() => {
         toast.success("Group created successfully");
+        form.reset();
       })
       .catch((err) => {
         toast.error(
@@ -210,7 +211,7 @@ const CreateGroupDialog = () => {
             ) : null}
             <DialogFooter className="w-full">
               <Button className="w-full" disabled={pending} type="submit">
-                Create
+                {pending ? "Creating Group..." : "Create Group"}
               </Button>
             </DialogFooter>
           </form>

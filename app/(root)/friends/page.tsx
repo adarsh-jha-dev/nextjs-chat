@@ -30,7 +30,7 @@ const Page = () => {
             ))
           )
         ) : (
-          <Loader2 className="h-8 w-8" />
+          <Loader2 className="h-8 w-8 animate-spin" />
         )}
       </ItemList>
       <ConversationFallback />

@@ -33,7 +33,7 @@ const Body = ({ members }: Props) => {
     if (messages && messages.length > 0) {
       markRead({ conversationId, messageId: messages[0].message._id });
     }
-  }, [messages?.length, conversationId, markRead]);
+  }, [messages, messages?.length, conversationId, markRead]);
 
   const formatSeenBy = (names: string[]) => {
     switch (names.length) {

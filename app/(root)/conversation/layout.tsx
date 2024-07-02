@@ -41,7 +41,7 @@ const CoversationsLayout = ({ children }: Props) => {
             })
           )
         ) : (
-          <Loader2 />
+          <Loader2 className="animate-spin" />
         )}
       </ItemList>
       {children}
